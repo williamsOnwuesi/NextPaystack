@@ -20,8 +20,24 @@ const App = () => {
     },
     publicKey,
     text: "Pay Now",
-    onSuccess: () =>
-      alert("Thanks for doing business with us! Come back soon!!"),
+    onSuccess: async () => {
+
+      alert("Thanks for doing business with us! Come back soon!!")
+
+      const res = await fetch("api/paystack", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          amount,
+        }),
+      });
+
+    },
     onClose: () => alert("Wait! Don't leave :("),
   }
 
