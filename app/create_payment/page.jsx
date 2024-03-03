@@ -5,6 +5,7 @@ import { PaystackButton } from "react-paystack"
 
 
 const App = () => {
+
   const publicKey = "pk_test_ea6fba45f769b68c74017a0896374653390e103c";
   const amount = 1000000
   const [email, setEmail] = useState("")
@@ -20,27 +21,13 @@ const App = () => {
     },
     publicKey,
     text: "Pay Now",
-    onSuccess: async () => {
-
+    onSuccess: () => {
       alert("Thanks for doing business with us! Come back soon!!")
-
-      const res = await fetch("api/paystack", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          phone,
-          amount,
-        }),
-      });
-
     },
     onClose: () => alert("Wait! Don't leave :("),
   }
 
+  
   return (
     <div className="App">
 

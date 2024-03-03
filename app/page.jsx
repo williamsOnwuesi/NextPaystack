@@ -50,7 +50,7 @@ export default function Home() {
 
           <div>
               <a href="/create_payment">
-                <button className="p-6 m-5 bg-green-600">
+                <button className="p-6 m-5 bg-green-600 text-white">
                   Book API Integration Service
                 </button>
               </a>
